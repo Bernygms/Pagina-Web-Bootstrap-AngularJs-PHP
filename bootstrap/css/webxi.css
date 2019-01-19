@@ -1,0 +1,215 @@
+ body {
+      font-family: Arial,Helvetica,sans-serif;
+      line-height: normal;
+  }
+  table{
+    font-family: "Helvetica Neue Light","Helvetica Neue",Helvetica,"Open Sans",Arial,sans-serif;
+    font-size: 15px;
+    font-weight: 300;
+    text-align: justify;
+    }
+  div{
+    margin: 0;
+    margin-right: 0px;
+    padding: 0;
+    border: 0;
+  }
+  .margin {
+	  margin-bottom: 75px;
+	  margin:center;
+  }
+  .bg-1 { 
+      /*background-color: #1abc9c; /* Green */
+      background: linear-gradient(purple,purple ,whitesmoke ,black);
+      color: black;
+  }
+  .bg-4 { 
+      background-color: black;
+      color: white;
+  }
+  .degradado{
+    background: linear-gradient(purple,purple ,whitesmoke);
+  }
+
+  .container-fluid {
+      padding-top: 0px;
+      padding-bottom: 0px;
+  }
+  .margin-footer{
+  margin-top: 70px;
+  }
+.h-personalida h3{
+  text-transform: uppercase;
+  color: purple;
+  text-decoration: none;
+}
+.h-personalida h1{
+  color: purple;
+}
+#main, #perfiles, #categorias{
+    width: 100%;
+    margin: 0 auto;
+    float: left;
+    background: #f5eeef; 
+    padding-top: 40px;
+    padding-bottom: 20px;
+}
+  .navbar ,  li a {
+	  
+      padding-top: 0px;
+      padding-bottom: 0px;
+      border: 0;
+      border-radius: 0;
+      margin-bottom: 0;
+      font-size: 12px;
+      letter-spacing: 5px; 
+	    background: purple;
+  }
+  
+  .navbar-nav a:hover, li a:hover {
+      color: violet !important;
+      
+      
+  }
+  .navbar-header a{
+	  color: red;
+  }
+  #myNavbar li a{
+	  color: #fff;
+  }
+  
+    /*Incia css de negocio*/
+  
+  .logo-small {
+      color: #f4511e;
+      font-size: 50px;
+  }
+  .logo {
+      color: #f4511e;
+      font-size: 200px;
+  }
+  
+  .btn {
+
+    background-color: #e43774;
+    width: 19vw;
+    height: 30px;
+    color: #fff;
+    min-height: 36px;
+    border-radius: 4px !important;
+    text-align: center;
+    font-family: "Helvetica Neue Regular","Helvetica Neue",Helvetica,"Open Sans",Arial,sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    border-style: none;
+    padding-top: 3px;
+    margin-left: 15px;
+
+}
+
+.seo-content {
+
+    background-color: #fff;
+
+}
+.full-width {
+
+    width: 100%;
+    float: left;
+
+}
+.hover-detalle{
+	  border: none;
+	  color: white;
+	  padding: 16px 32px;
+	  text-align: center;
+	  font-size: 16px;
+	  margin: 4px 2px;
+	  opacity: 0.6;
+	  transition: 0.3s;
+}
+.hover-detalle:hover {opacity: 1}
+
+img {
+  filter: alpha(opacity=100); /* For IE8 and earlier */
+}
+
+samp{ 
+  text-decoration: none;
+  color: purple;
+   }
+
+
+.detail{
+    background-color: #fff;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+    border-radius: 8px;
+}
+
+.detail dd, .detail dt {
+    margin-bottom: .625em;
+}
+.detail dd {
+    width: 40%;
+}
+.detail dd, .detail dt {
+    float: left;
+    display: inline;
+    text-align: left;
+    color: #797575;
+    font-size: .75em;
+}
+
+.detail dd, .detail dt {
+    margin-bottom: .625em;
+}
+.detail dt {
+    width: 60%;
+}
+.detail dd, .detail dt {
+    float: left;
+    display: inline;
+    text-align: left;
+    color: #797575;
+    font-size: .75em;
+}
+.detail{
+  margin-top: 3px;
+}
+
+
+#previous_and_next a {
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 16px;
+}
+
+#previous_and_next a:hover {
+    background-color: #e43774;
+    color: black;
+}
+
+.previous {
+     background-color: purple;
+    color: white;
+    float: right;
+}
+
+.next {
+     background-color: purple;
+     color: white;
+     float: left;
+}
+
+.round {
+    border-radius: 100%;
+    margin: auto;
+}
+
+#main hr{
+  border: 2px;
+  background: red;
+}

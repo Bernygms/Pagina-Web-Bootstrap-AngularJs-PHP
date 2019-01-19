@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<!--Autor: Bernardino Games-->
+<html ng-app="appWebxi">
+    <head>
+        <title>Webxi</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="../bootstrap/css/webxi.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    </head>
+
+<body ng-controller="controllerWebxi">
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>                        
+                    </button>
+                    <a id="" href="../index.html" class="navbar-brand" >Pagina Web </a>
+                </div>
+                <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav navbar-nav navbar-right">
+						<li><a ng-click="getCategoria(11)" ng-show="activar > 0" class="page-scroll" >Categoria 1 </a></li>
+						<li><a ng-click="getCategoria(12)" ng-show="activar > 0" class="page-scroll" >Categoria 2 </a></li>
+						<li><a ng-click="getCategoria(13)" ng-show="activar > 0" class="page-scroll" >Categoria 3 </a></li>
+						<li><a href="main.html">T &AMP; C</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+         <div id="content" class="container-fluid bg-1">
+                 <!-- Third Container (Grid) -->
+            <div id="main" ng-show="activar == 0"  class="container-fluid  text-center"> 
+                <div class="container text-center">                    
+                    <div class="h-personalida">
+                        <h3>Anime Japonés</h3>
+                        <div class="carousel-inner" role="listbox">
+                            <div class="item active">
+                                <h4>"El anime tradicionalmente es dibujado a mano y al principio los procesos realizados de forma digital eran muy específicos (retoque y montaje)."<br><span>Anime</span></h4>
+                            </div>
+                        </div>                        
+                    </div>
+                    <hr>
+                    <div  class="row">
+                        <div class="col-sm-4">
+                            <img  ng-click="getCategoria(11)" src="../bootstrap/img/header.jpg" class="img-polaroid img-responsive img-thumbnail ">
+                            <p>Plata</p>
+                            <button  ng-click="getCategoria(11)" class="btn btn-xs" >Ver m&aacute;s</button>
+                        </div>
+                        <div class="col-sm-4"> 
+                            <img  ng-click="getCategoria(12)" src="../bootstrap/img/header.jpg" class="img-polaroid img-responsive img-thumbnail ">
+                            <p>Oro</p>
+                            <button ng-click="getCategoria(12)" class="btn btn-xs" >Ver m&aacute;s</button>
+                        </div>
+                        <div class="col-sm-4"> 
+                            <img ng-click="getCategoria(13)" src="../bootstrap/img/header.jpg" class="img-polaroid img-responsive img-thumbnail ">
+                            <p>Diamante</p>
+                            <button ng-click="getCategoria(13)" class="btn btn-xs" > Ver m&aacute;s</button>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <p class="text-right">Hoy {{fecha}}</p>
+            </div>
+            <!-- Third Container (Grid) -->
+            <div id="categorias" ng-show="activar == 1" class="container-fluid  text-center  "> 
+                <div class="container text-center">   
+                    <div class="h-personalida">
+                        <h3 >Anime Japonés</h3>
+                        <div class="carousel-inner" role="listbox">
+                            <div class="item active">
+                                <h4>"El anime tradicionalmente es dibujado a mano y al principio los procesos realizados de forma digital eran muy específicos (retoque y montaje)."<br><span>Anime</span></h4>
+                            </div>
+                        </div>                       
+                    </div>
+                    <div id="previous_and_next" class="">
+                        <span title="Pagina anterior">
+                            <a ng-click="previous()" class="round next  btn-small" ><</a>
+                        </span>
+                        <span title="Pagina siguiente">
+                            <a ng-if="perfil.length > 0" ng-click="next()" class="round previous btn-small">></a>
+                        </span>
+                    </div> 
+                    <hr>
+                    <br>
+                    <p class="text-left">Hoy {{fecha}}</p>
+                    <div class="row">
+                        <div ng-repeat="cliente in clientes" class="col-md-3">
+                            <div class="thumbnail">
+                                <img  ng-click="getCliente(cliente.id_cliente)" src="../folder/perfiles/{{cliente.perfil_url_cliente}}"  alt="Lights" style="width:100%">
+                                <div class="caption">
+                                    <p>{{cliente.nombre_cliente}}</p>
+                                    <hr>
+                                    <p class="text-center" >Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>  
+                    <hr>
+                </div>      
+            </div>
+
+                    <!-- First  perfiles -->
+            <div id="perfiles" ng-show="activar == 2" ng-repeat="per in perfil"    class=" container-fluid text-center " >
+                <div  class="container text-center">
+                    <div class="h-personalida">
+                        <h3>Anime</h3>
+                        <!-- Wrapper for slides -->
+                        <div class="carousel-inner" role="listbox">
+                            <div class="item active">
+                                <h4>"El anime tradicionalmente es dibujado a mano y al principio los procesos realizados de forma digital eran muy específicos (retoque y montaje)<br><span> Anime</span></h4>
+                            </div>
+                        </div>                     
+                    </div>
+                    <div id="previous_and_next" class="">
+                        <span title="Pagina anterior">
+                            <a ng-click="previous()" class="round next  btn-small"><</a>
+                        </span>
+                    </div> 
+                    <hr>
+                    <br>
+                    <p class="text-left">Hoy {{fecha}}</p>
+                    <div class="">
+                        <div class="row">
+                            <div class="col-md-4">                       
+                                <div class="panel panel-default">
+                                    <br>
+                                    <p><strong>{{per.nombre_cliente}}</strong></p>
+                                    <hr>
+                                    <div class="panel-body detail">
+                                        <dl style="width:80%">
+                                           <!-- <dt scope="row">Edad:</dt>
+                                            <dd>{{per.edad_cliente}}</dd>
+                                            <dt scope="row">Estatura:</dt>
+                                            <dd>{{per.estatura_cliente}}</dd>
+                                            <dt scope="row">Peso:</dt>
+                                            <dd>{{per.peso_cliente}}</dd>
+                                            <dt scope="row">Cintura:</dt>
+                                            <dd>{{per.medidas_cliente}}</dd>-->
+                                            <dt scope="row">Ojos:</dt>
+                                            <dd>{{per.ojos_cliente}}</dd>
+                                            <dt scope="row">Idioma:</dt>
+                                            <dd>{{per.idioma_cliente}}</dd>
+                                            <!--<dt scope="row">Horario:</dt>
+                                            <dd>{{per.horario_cliente}}</dd>
+                                            <dt scope="row">Celular:</dt>
+                                            <dd>{{per.celular_cliente}}</dd>
+                                            <dt scope="row">Correo:</dt>
+                                            <dd>{{per.email_cliente}}</dd>-->
+                                        </dl>
+                                    </div>
+                                </div>
+                                <div class="panel panel-default">
+                                    <br>
+                                    <p><strong>{{per.nombre_cliente}}</strong></p>
+                                    <hr>
+                                    <div class="panel-body">
+                                        <dl >
+                                            <dd>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</dd>
+                                        </dl>
+                                    </div>
+                                </div>
+                                <div class="panel panel-default">
+                                    <br>
+                                    <p><strong>{{per.nombre_cliente}}</strong></p>
+                                    <hr>
+                                    <div class="panel-body">
+                                        <dl >
+                                            <dd>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</dd>
+                                        </dl>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4 col-xs-6 picss">
+                                <div class="thumbnail">
+                                    <img src="../folder/perfiles/{{per.perfil_url_cliente}}" alt="Sexys Tehuacan"  style="width:100%">
+                                </div>
+                                <div class="thumbnail">
+                                    <img src="../folder/perfiles/{{per.perfil_url_cliente}}" alt="Sexys Tehuacan"  style="width:100%">
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-xs-6 picss">
+                                <div class="thumbnail">
+                                    <img src="../folder/perfiles/{{per.perfil_url_cliente}}" alt="Sexys Tehuacan"  style="width:100%">
+                                </div>
+                                <div class="thumbnail">
+                                    <img src="../folder/perfiles/{{per.perfil_url_cliente}}" alt="Sexys Tehuacan"  style="width:100%">
+                                </div>
+                            </div>
+                            <div class="col-md-12"><marquee BEHAVIOR=ALTERNATE>El anime tradicionalmente es dibujado a mano y al principio los procesos realizados de forma digital eran muy específicos (retoque y montaje)</marquee></div>
+                            <!-- Wrapper for slides -->
+                            <div class="carousel-inner" role="listbox">
+                              <div class="item active">
+                                <h4>"This company is the best. I am so happy with the result!"<br><span>Michael Roe, Vice President, Comment Box</span></h4>
+                              </div>
+                              <div class="item">
+                                <h4>"One word... WOW!!"<br><span>John Doe, Salesman, Rep Inc</span></h4>
+                              </div>
+                              <div class="item">
+                                <h4>"Could I... BE any more happy with this company?"<br><span>Chandler Bing, Actor, FriendsAlot</span></h4>
+                              </div>
+                            </div>
+                            <div class="col-sm-6 picss">
+                                <div class="thumbnail">
+                                    <img src="../folder/galeria/bety1.jpg" alt="Sexys Tehuacan"  style="width:100%">
+                                </div>                     
+                            </div>
+                            <div class="col-sm-6 picss">
+                                <div class="thumbnail">
+                                    <img src="../folder/galeria/bety1.jpg" alt="Sexys Tehuacan"  style="width:100%">
+                                </div>                     
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer -->
+        <footer id="footer-main" class="container-fluid bg-4 text-center">	
+            <div ng-include="'footer.html'"></div>	
+		</footer>
+        <script type="text/javascript" src="../lib/jquery-3.3.1.min.js"></script>
+        <script type="text/javascript" src="../lib/angular.min.js"></script>
+        <script type="text/javascript" src="../lib/angular-resource.min.js"></script>
+        <script type="text/javascript" src="../lib/angular-touch.min.js" ></script>
+        <script type="text/javascript" src="../bootstrap/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="../lib/webxiApp.js"></script>
+        <script type="text/javascript" src="../lib/javascript.js"></script>
+    </body>
+</html>
